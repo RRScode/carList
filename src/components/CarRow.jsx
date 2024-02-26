@@ -21,7 +21,7 @@ const CarRow = ({x, cars, setCars}) => {
                     value={make}
                     onChange={(e) => {setMake(e.target.value)}}
                 ></input> : x.make}
-                {console.log(x.make)}
+                {console.log(x.id)}
             </TableCell>
             <TableCell align="center">
                 {editing ? 
@@ -34,7 +34,7 @@ const CarRow = ({x, cars, setCars}) => {
             <TableCell align="center">
                 {editing ? 
                 <input 
-                    type="text" 
+                    type="number"
                     value={year}
                     onChange={(e) => {setYear(e.target.value)}}
                 ></input> : x.year}
