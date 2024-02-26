@@ -6,9 +6,9 @@ import EditOrDeleteCar from './EditOrDeleteCar';
 const CarRow = ({x, cars, setCars}) => {
     const [editing, setEditing] = useState(false);
     const [deleting, setDeleting] = useState(false);
-    const [make, setMake] = useState("");
-    const [model, setModel] = useState("");
-    const [year, setYear] = useState("");
+    const [make, setMake] = useState(`${x.make}`);
+    const [model, setModel] = useState(`${x.model}`);
+    const [year, setYear] = useState(`${x.year}`);
     const id = x.id;
     const data = {make, model, year, id};
 
@@ -19,16 +19,15 @@ const CarRow = ({x, cars, setCars}) => {
                 <input 
                     type="text"
                     value={make}
-                    defaultValue={x.make}
                     onChange={(e) => {setMake(e.target.value)}}
                 ></input> : x.make}
+                {console.log(x.make)}
             </TableCell>
             <TableCell align="center">
                 {editing ? 
                 <input
                     type="text" 
                     value={model}
-                    defaultValue={x.model}
                     onChange={(e) => {setModel(e.target.value)}}
                 ></input> : x.model}
             </TableCell>
@@ -37,7 +36,6 @@ const CarRow = ({x, cars, setCars}) => {
                 <input 
                     type="text" 
                     value={year}
-                    defaultalue={x.year}
                     onChange={(e) => {setYear(e.target.value)}}
                 ></input> : x.year}
             </TableCell>

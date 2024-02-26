@@ -25,8 +25,6 @@ const EditOrDeleteCar = ({editing, setEditing, deleting, setDeleting, data, cars
       })
     }
 
-console.log(cars)
-
     if (editing === true) {
       return(
         <div>
