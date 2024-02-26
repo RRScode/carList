@@ -13,17 +13,31 @@ const EditOrDeleteCar = ({editing, setEditing, deleting, setDeleting, data, cars
     axios
       .put(`http://localhost:3000/cars/${data.id}`, data)
       .then(() => {
-        const updatedCarsList = cars.map((x) => {
+        const carsListEditedItem = cars.map((x) => {
           if (x.id === data.id) {
             return data
           } else {
             return x
           }
         })
-        setCars(updatedCarsList)
+        setCars(carsListEditedItem)
         setEditing(false)
       })
     }
+
+    const handleDelete = () => {
+      axios
+        .delete(`http://localhost:3000/cars/${data.id}`)
+        .then((response) => {
+          const carsListDeletedItem = cars.filter((x) => {
+            if (x.id !== data.id){ 
+              return x}
+          })
+          setCars(carsListDeletedItem)
+          setDeleting(false)
+          })
+        .catch((error) => {console.log(error)})
+        } 
 
     if (editing === true) {
       return(
@@ -35,7 +49,7 @@ const EditOrDeleteCar = ({editing, setEditing, deleting, setDeleting, data, cars
     } else if (deleting === true) {
       return(
         <div>
-          <CheckTwoToneIcon></CheckTwoToneIcon>
+          <CheckTwoToneIcon onClick={() => {handleDelete()}}></CheckTwoToneIcon>
           <CancelTwoToneIcon onClick={() => {setDeleting(false)}}></CancelTwoToneIcon>
         </div>
       )
