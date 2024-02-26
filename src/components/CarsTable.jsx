@@ -8,10 +8,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
-import ModeEditOutlineTwoToneIcon from '@mui/icons-material/ModeEditOutlineTwoTone';
-import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
-import CancelTwoToneIcon from '@mui/icons-material/CancelTwoTone';
 import axios from 'axios';
+import CarRow from './CarRow';
 
 
 export default function CarsTable() {
@@ -25,32 +23,7 @@ export default function CarsTable() {
         })
       }, []);
       
-
-  const EditOrDeleteCar = () => {
-    const [editing, setIsEditing] = useState(false);
-    const [deleting, setIsDeleting] = useState(false);
-
-    if (editing === true) {
-      return(
-        <div>
-          <CancelTwoToneIcon onClick={() => {setIsEditing(false)}}></CancelTwoToneIcon>
-        </div>
-    )} else if (deleting === true) {
-      return(
-        <div>
-          <CancelTwoToneIcon onClick={() => {setIsDeleting(false)}}></CancelTwoToneIcon>
-        </div>
-    )} else {
-      return(
-        <div>  
-          <ModeEditOutlineTwoToneIcon onClick={() => {setIsEditing(true)}}></ModeEditOutlineTwoToneIcon>
-          <DeleteTwoToneIcon onClick={() => {setIsDeleting(true)}}></DeleteTwoToneIcon>
-        </div>
-
-  )}}   
-    
-
-  return (
+ return (
     <TableContainer component={Paper}>
       <Table size="small" aria-label="simple table">
       {/* sx={{ minWidth: 650 }} */}
@@ -66,15 +39,11 @@ export default function CarsTable() {
         <TableBody>
           {cars.map((x) => {
             return(
-              <TableRow>
-                <TableCell>{x.make}</TableCell>
-                <TableCell align="center">{x.model}</TableCell>
-                <TableCell align="center">{x.year}</TableCell>
-                <TableCell align="center">{x.id}</TableCell>
-                <TableCell size="small" align="right">
-                    <EditOrDeleteCar/>
-                </TableCell>
-              </TableRow>
+              <CarRow
+                x={x}
+                cars={cars}
+                setCars={setCars}
+              />
             )
           })}
         </TableBody>
