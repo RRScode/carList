@@ -21,7 +21,6 @@ const CarRow = ({x, cars, setCars}) => {
                     value={make}
                     onChange={(e) => {setMake(e.target.value)}}
                 ></input> : x.make}
-                {console.log(x.id)}
             </TableCell>
             <TableCell align="center">
                 {editing ? 
