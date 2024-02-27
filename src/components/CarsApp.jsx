@@ -8,13 +8,12 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import axios from 'axios';
 import AddCircleOutlineTwoToneIcon from '@mui/icons-material/AddCircleOutlineTwoTone';
 import Stack from '@mui/material/Stack';
 
 import CarsTable from './CarsTable.jsx';
 
-const MainWrapper = () => {
+const CarsApp = () => {
   const [addNewCar, setAddNewCar] = useState(false)
   
 
@@ -57,4 +56,4 @@ const MainWrapper = () => {
   )
 }
 
-export default MainWrapper
+export default CarsApp

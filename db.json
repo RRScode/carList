@@ -4,12 +4,6 @@
       "make": "Acura",
       "model": "RL",
       "year": "2022",
-      "id": "860d"
-    },
-    {
-      "make": "Acura",
-      "model": "RL",
-      "year": "2022",
       "id": "7a3c"
     },
     {
@@ -17,6 +11,30 @@
       "model": "RL",
       "year": "2022",
       "id": "d3f0"
+    },
+    {
+      "id": "121f",
+      "make": "Honda",
+      "model": "CRV",
+      "year": "1999"
+    },
+    {
+      "id": "d64b",
+      "make": "Honda",
+      "model": "Accord",
+      "year": "2020"
+    },
+    {
+      "id": "0bb6",
+      "make": "kia",
+      "model": "Forte",
+      "year": "2015"
+    },
+    {
+      "id": "8a7d",
+      "make": "Dodge",
+      "model": "Ram",
+      "year": "2018"
     }
   ]
 }

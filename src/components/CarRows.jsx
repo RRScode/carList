@@ -3,27 +3,12 @@ import React, {useState, useEffect} from 'react'
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 import EditOrDeleteCar from './EditOrDeleteCar';
-import axios from 'axios';
 
-const CarRows = () => {
-    const [cars, setCars] = useState([]);
 
-    
-    // const id = x.id;
-    // const data = {make, model, year, id};
+const CarRows = ({cars, setCars}) => {
     
     
-    
-    useEffect(()=>{
-        axios
-        .get("http://localhost:3000/cars")
-        .then((response)=>{
-            setCars(response.data);
-        })
-    }, []);
-    
-    
-    const CarItemRow = ({carItem}) => {
+    const CarItemRow = ({setCars, carItem}) => {
         const [editing, setEditing] = useState(false);
         const [deleting, setDeleting] = useState(false);
 
@@ -85,11 +70,13 @@ const CarRows = () => {
     
     return(
         <>
+
             {cars.map((x) => {
                 return (
                     <CarItemRow
                         key={x.id}
                         carItem={x}
+                        setCars={setCars}
                     />
                 )
             })}

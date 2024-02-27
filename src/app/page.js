@@ -1,9 +1,9 @@
 import React from 'react'
-import MainWrapper from '@/components/MainWrapper';
+import CarsApp from '@/components/CarsApp';
 
 const Page = () => {
   return (
-    <MainWrapper/>
+    <CarsApp/>
   )
 }
 
