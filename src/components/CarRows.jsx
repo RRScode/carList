@@ -31,16 +31,13 @@ const CarRows = () => {
         const [model, setModel] = useState(`${carItem.model}`);
         const [year, setYear] = useState(`${carItem.year}`);
 
-        
         const carData = {
             make,
             model,
             year,
             id :`${carItem.id}`
         }
-        
-        console.log(carData)
-        
+
         return(
             <>
                 <TableRow>
@@ -91,6 +88,7 @@ const CarRows = () => {
             {cars.map((x) => {
                 return (
                     <CarItemRow
+                        key={x.id}
                         carItem={x}
                     />
                 )
