@@ -27,8 +27,14 @@
     {
       "make": "Dodge",
       "model": "Ram",
-      "year": "2020",
+      "year": "2023",
       "id": "8a7d"
+    },
+    {
+      "id": "336b",
+      "make": "kia",
+      "model": "Sol",
+      "year": "2015"
     }
   ]
 }

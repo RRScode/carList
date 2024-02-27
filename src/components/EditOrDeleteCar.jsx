@@ -39,29 +39,27 @@ const EditOrDeleteCar = ({editing, setEditing, deleting, setDeleting, carData, c
         .catch((error) => {console.log(error)})
         } 
 
-    if (editing === true) {
-      return(
-        <div>
-          <CancelTwoToneIcon onClick={() => {setEditing(false)}}></CancelTwoToneIcon>
-          <SaveTwoToneIcon onClick={() => {handleSave()}}></SaveTwoToneIcon>
-        </div>
-      )
-    } else if (deleting === true) {
-      return(
-        <div>
-          <CheckTwoToneIcon onClick={() => {handleDelete()}}></CheckTwoToneIcon>
-          <CancelTwoToneIcon onClick={() => {setDeleting(false)}}></CancelTwoToneIcon>
-        </div>
-      )
-    } else {
-      return(
-        <div>  
-          <ModeEditOutlineTwoToneIcon onClick={() => {setEditing(true)}}></ModeEditOutlineTwoToneIcon>
-          <DeleteTwoToneIcon onClick={() => {setDeleting(true)}}></DeleteTwoToneIcon>
-        </div>
-      )
-    }
-
+    return (
+      <>
+        {editing &&
+          <>
+            <CancelTwoToneIcon onClick={() => {setEditing(false)}}></CancelTwoToneIcon>
+            <SaveTwoToneIcon onClick={() => {handleSave()}}></SaveTwoToneIcon>
+        </>
+        }
+        {deleting ?
+          <>
+            <CheckTwoToneIcon onClick={() => {handleDelete()}}></CheckTwoToneIcon>
+            <CancelTwoToneIcon onClick={() => {setDeleting(false)}}></CancelTwoToneIcon>
+          </>
+        :
+          <>
+            <ModeEditOutlineTwoToneIcon onClick={() => {setEditing(true)}}></ModeEditOutlineTwoToneIcon>
+            <DeleteTwoToneIcon onClick={() => {setDeleting(true)}}></DeleteTwoToneIcon>
+          </>
+        }
+      </> 
+    )
   }
 
 
