@@ -25,16 +25,10 @@
       "year": "2020"
     },
     {
-      "id": "0bb6",
-      "make": "kia",
-      "model": "Forte",
-      "year": "2015"
-    },
-    {
-      "id": "8a7d",
       "make": "Dodge",
       "model": "Ram",
-      "year": "2018"
+      "year": "2020",
+      "id": "8a7d"
     }
   ]
 }

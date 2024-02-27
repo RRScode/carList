@@ -5,7 +5,6 @@ import SaveTwoToneIcon from '@mui/icons-material/SaveTwoTone';
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 import axios from 'axios';
-// import axios from 'axios';
 
 
 const NewCar = ({cars, setCars, setAddNewCar}) => {
