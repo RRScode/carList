@@ -7,15 +7,15 @@ import CheckTwoToneIcon from '@mui/icons-material/CheckTwoTone';
 import axios from 'axios';
 
 
-const EditOrDeleteCar = ({editing, setEditing, deleting, setDeleting, data, cars, setCars}) => {    
+const EditOrDeleteCar = ({editing, setEditing, deleting, setDeleting, carData, cars, setCars}) => {    
 
   const handleSave = () => {
     axios
-      .put(`http://localhost:3000/cars/${data.id}`, data)
+      .put(`http://localhost:3000/cars/${carData.id}`, carData)
       .then(() => {
         const carsListEditedItem = cars.map((x) => {
-          if (x.id === data.id) {
-            return data
+          if (x.id === carData.id) {
+            return carData
           } else {
             return x
           }
@@ -27,10 +27,10 @@ const EditOrDeleteCar = ({editing, setEditing, deleting, setDeleting, data, cars
 
     const handleDelete = () => {
       axios
-        .delete(`http://localhost:3000/cars/${data.id}`)
+        .delete(`http://localhost:3000/cars/${carData.id}`)
         .then((response) => {
           const carsListDeletedItem = cars.filter((x) => {
-            if (x.id !== data.id){ 
+            if (x.id !== carData.id){ 
               return x}
           })
           setCars(carsListDeletedItem)
