@@ -31,8 +31,6 @@ const CarsTable = () => {
 
 
   return (
-    <div>
-        <h1>JC's Garage</h1>
       <>
         <Stack
           direction="row"
@@ -73,7 +71,7 @@ const CarsTable = () => {
             </Table>
           </TableContainer>
       </>
-    </div>
+   
   )
 }
 
