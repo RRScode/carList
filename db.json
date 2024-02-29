@@ -4,37 +4,97 @@
       "make": "Acura",
       "model": "RL",
       "year": "2022",
-      "id": "7a3c"
-    },
-    {
-      "make": "Acura",
-      "model": "RL",
-      "year": "2022",
       "id": "d3f0"
     },
     {
-      "id": "121f",
+      "id": "bbb8",
       "make": "Honda",
-      "model": "CRV",
+      "model": "Pilot",
+      "year": "2005"
+    },
+    {
+      "id": "f248",
+      "make": "Toyota",
+      "model": "Corolla",
+      "year": "1996"
+    },
+    {
+      "id": "9fb4",
+      "make": "Toyota",
+      "model": "Camry",
+      "year": "1996"
+    },
+    {
+      "id": "1639",
+      "make": "Toyota",
+      "model": "Avalon",
+      "year": "2002"
+    },
+    {
+      "id": "e106",
+      "make": "Nissan",
+      "model": "Alitama",
+      "year": "1993"
+    },
+    {
+      "id": "1b3c",
+      "make": "Acura",
+      "model": "MDX",
+      "year": "2009"
+    },
+    {
+      "id": "df95",
+      "make": "Nissan",
+      "model": "Altima",
       "year": "1999"
     },
     {
-      "id": "d64b",
-      "make": "Honda",
-      "model": "Accord",
-      "year": "2020"
+      "id": "d9f4",
+      "make": "Nissan",
+      "model": "Maxima",
+      "year": "1990"
     },
     {
+      "id": "f6c9",
+      "make": "Dodge",
+      "model": "Caravan",
+      "year": "1998"
+    },
+    {
+      "id": "32d5",
+      "make": "Chevy",
+      "model": "S10",
+      "year": "2002"
+    },
+    {
+      "id": "199c",
+      "make": "Ford",
+      "model": "Escape",
+      "year": "2012"
+    },
+    {
+      "id": "a1a8",
+      "make": "Ford",
+      "model": "F150",
+      "year": "2018"
+    },
+    {
+      "id": "bbc8",
       "make": "Dodge",
       "model": "Ram",
-      "year": "2023",
-      "id": "8a7d"
+      "year": "2018"
     },
     {
-      "id": "336b",
-      "make": "kia",
-      "model": "Sol",
-      "year": "2015"
+      "id": "e28a",
+      "make": "Honda",
+      "model": "Fit",
+      "year": "2009"
+    },
+    {
+      "id": "98b1",
+      "make": "Nissan",
+      "model": "Altima",
+      "year": "1999"
     }
   ]
 }

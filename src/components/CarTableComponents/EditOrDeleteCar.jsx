@@ -41,13 +41,12 @@ const EditOrDeleteCar = ({editing, setEditing, deleting, setDeleting, carData, c
 
     return (
       <>
-        {editing &&
+        {editing ?
           <>
             <CancelTwoToneIcon onClick={() => {setEditing(false)}}></CancelTwoToneIcon>
             <SaveTwoToneIcon onClick={() => {handleSave()}}></SaveTwoToneIcon>
-        </>
-        }
-        {deleting ?
+          </>
+        : deleting ?
           <>
             <CheckTwoToneIcon onClick={() => {handleDelete()}}></CheckTwoToneIcon>
             <CancelTwoToneIcon onClick={() => {setDeleting(false)}}></CancelTwoToneIcon>
