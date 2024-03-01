@@ -1,7 +1,5 @@
 'use client'
-import React, {useState, useEffect} from 'react'
-import axios from 'axios';
-
+import React, {useState} from 'react'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -16,18 +14,8 @@ import NewCar from './NewCar.jsx';
 import CarRows from './CarRows.jsx';
 
 
-const CarsTable = () => {
+const CarsTable = ({cars, setCars}) => {
   const [addNewCar, setAddNewCar] = useState(false)
-  const [cars, setCars] = useState([]);
-
-  useEffect(()=>{
-      axios
-      .get("http://localhost:3000/cars")
-      .then((response)=>{
-          const sortMostRecent = response.data.reverse()
-          setCars(sortMostRecent);
-      })
-  }, []);
 
 
   return (

@@ -6,14 +6,16 @@ import styles from "./pie-chart.module.css";
 import React from "react";
 
 type DataItem = {
-  name: string;
-  value: number;
+  make: string;
+  count: number;
 };
 type PieChartProps = {
   width: number;
   height: number;
   data: DataItem[];
 };
+
+
 
 const MARGIN_X = 150;
 const MARGIN_Y = 50;
@@ -26,15 +28,17 @@ const colors = [
   "#9a6fb0",
   "#a53253",
   "#69b3a2",
+  "#63b7aa",
 ];
 
 export const PieChart = ({ width, height, data }: PieChartProps) => {
+  
   const ref = useRef(null);
 
   const radius = Math.min(width - 2 * MARGIN_X, height - 2 * MARGIN_Y) / 2;
 
   const pie = useMemo(() => {
-    const pieGenerator = d3.pie<any, DataItem>().value((d) => d.value);
+    const pieGenerator = d3.pie<any, DataItem>().value((d) => d.count);
     return pieGenerator(data);
   }, [data]);
 
@@ -63,7 +67,7 @@ export const PieChart = ({ width, height, data }: PieChartProps) => {
     const isRightLabel = inflexionPoint[0] > 0;
     const labelPosX = inflexionPoint[0] + 50 * (isRightLabel ? 1 : -1);
     const textAnchor = isRightLabel ? "start" : "end";
-    const label = grp.data.name + " (" + grp.value + ")";
+    const label = grp.data.make + " (" + grp.value + ")";
 
     return (
       <g

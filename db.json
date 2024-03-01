@@ -85,16 +85,10 @@
       "year": "2018"
     },
     {
-      "id": "e28a",
-      "make": "Honda",
-      "model": "Fit",
-      "year": "2009"
-    },
-    {
-      "id": "98b1",
       "make": "Nissan",
       "model": "Altima",
-      "year": "1999"
+      "year": "1999",
+      "id": "98b1"
     }
   ]
 }
