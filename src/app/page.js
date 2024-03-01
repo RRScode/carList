@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const Page = () => {
   const [cars, setCars] = useState([]);
-  const [data, setData] = useState([{}]);
+  const [data, setData] = useState([]);
 
   
   useEffect(()=>{
@@ -73,23 +73,25 @@ const Page = () => {
   // console.log(itemListByMake)
   // }
 
-  const matches = [];
-
+  const newData = [];
   cars.map((car) => {
     /**
      * check if newData Array contains object with make that matches current car make
      * if the newData array contains match, increment count of that matching newData array object
      * if no match, create new object in newData array with matching make and set count to 1
      */
-    data.map((dataItem, dataIndex) => {
-      if (dataItem.make === car.make) {
-        // data[dataIndex].count == count++ 
-        console.log(data[dataIndex])
-      }
-      // data.push({make: car.make, count: 1});
-    })
-  });
 
+    newData.length === 0 ? newData.push({make: car.make, count: 0}) :
+    newData.forEach((dataItem, dataIndex) => {
+      if (dataItem.make === car.make) {
+        console.log(newData[dataIndex])
+        // console.log(dataIndex)
+      }
+      // newData.push({make: car.make, count: 1})
+    });
+  });
+  // console.log(newData)
+  
   return (
     <>
       <h1>JC's Garage</h1>
