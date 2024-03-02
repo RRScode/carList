@@ -8,7 +8,7 @@ import axios from 'axios';
 const Page = () => {
   const [cars, setCars] = useState([]);
   const [data, setData] = useState([]);
-
+  
   
   useEffect(()=>{
     axios
@@ -16,17 +16,14 @@ const Page = () => {
     .then((response)=>{
       const sortMostRecent = response.data.reverse()
       setCars(sortMostRecent);
-      
     })
   }, []);
-
-
- 
- 
+  
   const listByMake = cars.map((x) => {
     return x.make
   })
   const sortedListByMake = listByMake.sort();
+  
   const WIPData = sortedListByMake.map((x) => {
     let makeData = {
       make: x,
@@ -34,6 +31,7 @@ const Page = () => {
     }
     return makeData
   });
+  
   const WIPData1 = WIPData.map((x, y, arr) => {
     if (y == 0){
       return  x
@@ -44,12 +42,16 @@ const Page = () => {
     } else {
       return x
     }
-   })
-   const makeCount = WIPData1.filter((x) => {
+  })
+  
+  const makeCount = WIPData1.filter((x) => {
     if (x.count > 0)
     return x
-   })
+})
 
+
+
+console.log (data)
 console.log(makeCount)
 
 
@@ -57,77 +59,8 @@ console.log(makeCount)
 
 
 
-
-
-/** 
-const makeCount = () => {  
-  
-}
- 
-const sortedCars = cars.sort();
-
-const itemListByMake = sortedCars.map((x) => {
-
-  const carMake = [{ 
-       make: x.make,
-     value: 0
-     }]
-    
-     return carMake
-  });
-  
-   const makeCount = [];
-
-   itemListByMake.forEach((x) => {
-     makeCount[y] = {
-       make: x.make,
-       value: x.value
-     }
-    if (x = makeCount[y]){
-        y.value += 1
-     } else {y.value = 1}
-    
-   })
-  
-   
-    if (make = carMake.make) {
-      carMake.value += 1
-   } else { carMake.value = 1}
-  
-    const makeList = itemListByMake.forEach((x) => {
-        itemListByMake.filter()
-     })
-
-
-
-  
-
-  
-
-   itemListByMake.sort()
-  
-    const counter = listOfMakers.map((x) => {
-   if (x == prev)
-   })
-    
-  
-   }
-
-   const newData = [];
-   cars.map((car) => {
-     newData.length === 0 ? newData.push({make: car.make, count: 0}) :
-   newData.forEach((dataItem, dataIndex) => {
-     if (dataItem.make === car.make) {
-       
-      // }
-      // newData.push({make: car.make, count: 1})
-     });
-   });
- 
-*/
-
-  return (
-    <>
+return (
+  <>
       <h1>JC's Garage</h1>
       <PieChart
         data={data}
