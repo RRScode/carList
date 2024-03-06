@@ -29,6 +29,7 @@ const colors = [
   "#a53253",
   "#69b3a2",
   "#63b7aa",
+  "#4caa8d"
 ];
 
 export const PieChart = ({ width, height, data }: PieChartProps) => {

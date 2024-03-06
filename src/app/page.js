@@ -7,8 +7,6 @@ import axios from 'axios';
 
 const Page = () => {
   const [cars, setCars] = useState([]);
-  const [data, setData] = useState([]);
-  
   
   useEffect(()=>{
     axios
@@ -19,6 +17,7 @@ const Page = () => {
     })
   }, []);
   
+
   const listByMake = cars.map((x) => {
     return x.make
   })
@@ -44,19 +43,10 @@ const Page = () => {
     }
   })
   
-  const makeCount = WIPData1.filter((x) => {
+  const data = WIPData1.filter((x) => {
     if (x.count > 0)
     return x
-})
-
-
-
-console.log (data)
-console.log(makeCount)
-
-
-
-
+  })
 
 
 return (
