@@ -15,11 +15,13 @@ const CarRows = ({cars, setCars}) => {
         const [make, setMake] = useState(`${carItem.make}`);
         const [model, setModel] = useState(`${carItem.model}`);
         const [year, setYear] = useState(`${carItem.year}`);
+        const [color, setColor] = useState(`${carItem.color}`);
 
         const carData = {
             make,
             model,
             year,
+            color,
             id :`${carItem.id}`
         }
 
@@ -49,6 +51,14 @@ const CarRows = ({cars, setCars}) => {
                         value={year}
                         onChange={(e) => {setYear(e.target.value)}}
                         ></input> : carItem.year}
+                    </TableCell>
+                    <TableCell align="center">
+                        {editing ? 
+                        <input 
+                        type="text"
+                        value={color}
+                        onChange={(e) => {setYear(e.target.value)}}
+                        ></input> : carItem.color}
                     </TableCell>
                     <TableCell align="center">{carItem.id}</TableCell>
                     <TableCell size="small" align="right">

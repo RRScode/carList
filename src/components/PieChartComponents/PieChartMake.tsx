@@ -1,9 +1,7 @@
 'use client'
-
-import { useMemo, useRef } from "react";
+import React, { useState, useMemo, useRef } from "react";
 import * as d3 from "d3";
-import styles from "./pie-chart.module.css";
-import React from "react";
+
 
 type DataItem = {
   make: string;
@@ -15,27 +13,25 @@ type PieChartProps = {
   data: DataItem[];
 };
 
-
-
 const MARGIN_X = 150;
 const MARGIN_Y = 50;
-const INFLEXION_PADDING = 20; // space between donut and label inflexion point
+const INFLEXION_PADDING = 20;
 
-const colors = [
-  "#e0ac2b",
-  "#e85252",
-  "#6689c6",
-  "#9a6fb0",
-  "#a53253",
-  "#69b3a2",
-  "#63b7aa",
-  "#4caa8d"
-];
+// const colors = [
+//   "#e0ac2b",
+//   "#e85252",
+//   "#6689c6",
+//   "#9a6fb0",
+//   "#a53253",
+//   "#69b3a2",
+// ];
 
-export const PieChart = ({ width, height, data }: PieChartProps) => {
-  
-  const ref = useRef(null);
+export const PieChartMake = ({ width, height, data }: PieChartProps) => {
 
+  const colors = data.map(() => {
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    return "#" + randomColor;
+  })
   const radius = Math.min(width - 2 * MARGIN_X, height - 2 * MARGIN_Y) / 2;
 
   const pie = useMemo(() => {
@@ -46,7 +42,7 @@ export const PieChart = ({ width, height, data }: PieChartProps) => {
   const arcGenerator = d3.arc();
 
   const shapes = pie.map((grp, i) => {
-    // First arc is for the Pie
+    // First arc is for the pie
     const sliceInfo = {
       innerRadius: 0,
       outerRadius: radius,
@@ -71,20 +67,7 @@ export const PieChart = ({ width, height, data }: PieChartProps) => {
     const label = grp.data.make + " (" + grp.value + ")";
 
     return (
-      <g
-        key={i}
-        className={styles.slice}
-        onMouseEnter={() => {
-          if (ref.current) {
-            ref.current.classList.add(styles.hasHighlight);
-          }
-        }}
-        onMouseLeave={() => {
-          if (ref.current) {
-            ref.current.classList.remove(styles.hasHighlight);
-          }
-        }}
-      >
+      <g key={i}>
         <path d={slicePath} fill={colors[i]} />
         <circle cx={centroid[0]} cy={centroid[1]} r={2} />
         <line
@@ -118,13 +101,37 @@ export const PieChart = ({ width, height, data }: PieChartProps) => {
 
   return (
     <svg width={width} height={height} style={{ display: "inline-block" }}>
-      <g
-        transform={`translate(${width / 2}, ${height / 2})`}
-        className={styles.container}
-        ref={ref}
-      >
-        {shapes}
-      </g>
+      <g transform={`translate(${width / 2}, ${height / 2})`}>{shapes}</g>
     </svg>
   );
 };
+
+
+// const radius = Math.min(width, height) / 2 - MARGIN;
+
+// const pie = useMemo(() => {
+//   const pieGenerator = d3.pie<any, DataItem>().value((d) => d.count);
+//   return pieGenerator(data);
+// }, [data]);
+
+// const arcs = useMemo(() => {
+//   const arcPathGenerator = d3.arc();
+//   return pie.map((p) =>
+//     arcPathGenerator({
+//       innerRadius: 0,
+//       outerRadius: radius,
+//       startAngle: p.startAngle,
+//       endAngle: p.endAngle,
+//     })
+//   );
+// }, [radius, pie]);
+
+// return (
+//   <svg width={width} height={height} style={{ display: "inline-block" }}>
+//     <g transform={`translate(${width / 2}, ${height / 2})`}>
+//       {arcs.map((arc, i) => {
+//         return <path key={i} d={arc} fill={colors[i]} />;
+//       })}
+//     </g>
+//   </svg>
+// );

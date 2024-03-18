@@ -1,5 +1,5 @@
 'use client'
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -37,6 +37,7 @@ const CarsTable = ({cars, setCars}) => {
                   <TableCell>Make</TableCell>
                   <TableCell align="center">Model</TableCell>
                   <TableCell align="center">Year</TableCell>
+                  <TableCell align="center">Color</TableCell>
                   <TableCell align="center">Item #</TableCell>
                   <TableCell align="right">Edit / Delete</TableCell>
                 </TableRow>

@@ -4,109 +4,113 @@
       "make": "Acura",
       "model": "RL",
       "year": "2022",
-      "id": "d3f0"
+      "id": "d3f0",
+      "color": "blue"
     },
     {
       "id": "bbb8",
       "make": "Honda",
       "model": "Pilot",
-      "year": "2005"
+      "year": "2005",
+      "color": "blue"
     },
     {
       "id": "f248",
       "make": "Toyota",
       "model": "Corolla",
-      "year": "1996"
+      "year": "1996",
+      "color": "blue"
     },
     {
       "id": "9fb4",
       "make": "Toyota",
       "model": "Camry",
-      "year": "1996"
-    },
-    {
-      "id": "1639",
-      "make": "Toyota",
-      "model": "Avalon",
-      "year": "2002"
+      "year": "1996",
+      "color": "blue"
     },
     {
       "id": "e106",
       "make": "Nissan",
       "model": "Alitama",
-      "year": "1993"
+      "year": "1993",
+      "color": "blue"
     },
     {
       "id": "1b3c",
       "make": "Acura",
       "model": "MDX",
-      "year": "2009"
-    },
-    {
-      "id": "df95",
-      "make": "Nissan",
-      "model": "Altima",
-      "year": "1999"
+      "year": "2009",
+      "color": "blue"
     },
     {
       "id": "d9f4",
       "make": "Nissan",
       "model": "Maxima",
-      "year": "1990"
-    },
-    {
-      "id": "f6c9",
-      "make": "Dodge",
-      "model": "Caravan",
-      "year": "1998"
+      "year": "1990",
+      "color": "blue"
     },
     {
       "id": "32d5",
       "make": "Chevy",
       "model": "S10",
-      "year": "2002"
+      "year": "2002",
+      "color": "blue"
     },
     {
       "id": "199c",
       "make": "Ford",
       "model": "Escape",
-      "year": "2012"
+      "year": "2012",
+      "color": "blue"
     },
     {
       "id": "a1a8",
       "make": "Ford",
       "model": "F150",
-      "year": "2018"
+      "year": "2018",
+      "color": "blue"
     },
     {
       "id": "bbc8",
       "make": "Dodge",
       "model": "Ram",
-      "year": "2018"
-    },
-    {
-      "make": "Nissan",
-      "model": "Altima",
-      "year": "1999",
-      "id": "98b1"
+      "year": "2018",
+      "color": "blue"
     },
     {
       "id": "ae14",
       "make": "Hyundai",
       "model": "Elantra",
-      "year": "2015"
+      "year": "2015",
+      "color": "blue"
     },
     {
       "id": "c82e",
       "make": "Chevy",
       "model": "Camaro",
-      "year": "2018"
+      "year": "2018",
+      "color": "green"
     },
     {
       "make": "Dodge",
       "model": "Windstar",
       "year": "1988",
-      "id": "e33c"
+      "id": "e33c",
+      "color": "red"
+    },
+    {
+      "id": "cee8",
+      "make": "Honda",
+      "model": "Accord",
+      "year": "2020",
+      "color": "red"
+    },
+    {
+      "id": "601e",
+      "make": "Hyundai",
+      "model": "Sonata",
+      "year": "2020",
+      "color": "green"
     }
   ]
 }
