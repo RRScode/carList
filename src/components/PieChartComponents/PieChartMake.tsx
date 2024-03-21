@@ -10,7 +10,13 @@ type DataItem = {
 type PieChartProps = {
   width: number;
   height: number;
-  data: DataItem[];
+  cars: [{
+    make: string;
+    model: string;
+    year: number;
+    id: string;
+    color: string;
+  }]
 };
 
 const MARGIN_X = 150;
@@ -26,7 +32,39 @@ const INFLEXION_PADDING = 20;
 //   "#69b3a2",
 // ];
 
-export const PieChartMake = ({ width, height, data }: PieChartProps) => {
+export const PieChartMake = ({ width, height, cars }: PieChartProps) => {
+
+  const listByMake = cars.map((x) => {
+    return x.make
+  })
+  const sortedListByMake = listByMake.sort();
+
+  const WIPData = sortedListByMake.map((x) => {
+    let makeData = {
+      make: x,
+      count: 1
+    }
+    return makeData
+  });
+
+  const WIPData1 = WIPData.map((x, y, arr) => {
+    if (y == 0) {
+      return x
+    } else if (x.make == arr[y - 1].make) {
+      x.count = x.count + arr[y - 1].count;
+      arr[y - 1].count = 0;
+      return x
+    } else {
+      return x
+    }
+  })
+
+  const data = WIPData1.filter((x) => {
+    if (x.count > 0)
+      return x
+  })
+
+
 
   const colors = data.map(() => {
     var randomColor = Math.floor(Math.random()*16777215).toString(16);
