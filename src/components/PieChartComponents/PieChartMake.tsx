@@ -10,13 +10,13 @@ type DataItem = {
 type PieChartProps = {
   width: number;
   height: number;
-  cars: [{
+  cars: {
     make: string;
     model: string;
     year: number;
     id: string;
     color: string;
-  }]
+  }[];
 };
 
 const MARGIN_X = 150;
@@ -36,7 +36,7 @@ export const PieChartMake = ({ width, height, cars }: PieChartProps) => {
 
   const listByMake = cars.map((x) => {
     return x.make
-  })
+  });
   const sortedListByMake = listByMake.sort();
 
   const WIPData = sortedListByMake.map((x) => {

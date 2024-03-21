@@ -57,7 +57,7 @@ const CarRows = ({cars, setCars}) => {
                         <input 
                         type="text"
                         value={color}
-                        onChange={(e) => {setYear(e.target.value)}}
+                        onChange={(e) => {setColor(e.target.value)}}
                         ></input> : carItem.color}
                     </TableCell>
                     <TableCell align="center">{carItem.id}</TableCell>

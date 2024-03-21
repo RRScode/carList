@@ -31,7 +31,8 @@ const Page = () => {
           height={450}
         />
         <BarPlotColor
-          BarPlotDataColor={BarPlotDataColor} 
+          BarPlotDataColor={BarPlotDataColor}
+          cars={cars}
           width={400} 
           height={400}
         />
